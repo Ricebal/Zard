@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Animator m_animator;
+    [SerializeField] Animator m_animator = null;
     [SerializeField] private CharacterController2D m_controller = null;
     [SerializeField] private float m_speed = 40f;
 
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             m_jump = true;
+            m_animator.SetBool("IsJumping", true);
         }
     }
 
@@ -26,5 +27,18 @@ public class PlayerMovement : MonoBehaviour
     {
         m_controller.Move(m_horizontalMove * Time.fixedDeltaTime, m_jump);
         m_jump = false;
+    }
+
+    public void ApexHandler()
+    {
+        Debug.Log("ApexHandled");
+        m_animator.SetBool("IsFalling", true);
+    }
+
+    public void LandHandler()
+    {
+        Debug.Log("LandHandled");
+        m_animator.SetBool("IsJumping", false);
+        m_animator.SetBool("IsFalling", false);
     }
 }
