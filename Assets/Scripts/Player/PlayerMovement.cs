@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         m_horizontalMove = Input.GetAxisRaw("Horizontal") * m_speed;
+        m_animator.SetFloat("Movement", Mathf.Abs(m_horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -31,13 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void ApexHandler()
     {
-        Debug.Log("ApexHandled");
         m_animator.SetBool("IsFalling", true);
     }
 
     public void LandHandler()
     {
-        Debug.Log("LandHandled");
         m_animator.SetBool("IsJumping", false);
         m_animator.SetBool("IsFalling", false);
     }

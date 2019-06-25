@@ -49,7 +49,7 @@ public class CharacterController2D : MonoBehaviour
             m_rigidbody2D.AddForce(new Vector2(0f, m_jumpForce));
         }
 
-        if (m_rigidbody2D.velocity.y < 0 && m_isJumping)
+        if (m_rigidbody2D.velocity.y < 0 && !m_grounded)
         {
             m_isJumping = false;
             OnApexEvent?.Invoke();
