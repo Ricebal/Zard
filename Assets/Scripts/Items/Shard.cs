@@ -12,5 +12,5 @@ public class Shard : ScriptableObject
     public float manaCost;
     public float speed;
 
-    public Sprite sprite;
+    public Color color;
 }

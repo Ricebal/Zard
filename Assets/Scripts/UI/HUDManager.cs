@@ -8,6 +8,7 @@ public class HUDManager : MonoBehaviour
 
     [SerializeField] private Stat m_health;
     [SerializeField] private Stat m_mana;
+    [SerializeField] private GameObject m_inventory;
 
     private void Awake()
     {
@@ -34,5 +35,10 @@ public class HUDManager : MonoBehaviour
 
     private void UpdateManaHandler()
     {
+    }
+
+    public static void ToggleInventory()
+    {
+        singleton.m_inventory.SetActive(!singelton.m_inventory.active);
     }
 }

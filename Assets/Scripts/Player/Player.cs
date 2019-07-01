@@ -10,13 +10,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Reset player stats
         m_health.Reset();
         m_mana.Reset();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

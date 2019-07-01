@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Mana
   m_EditorClassIdentifier: 
   minValue: 0
-  maxValue: 0
-  currentValue: 0
+  maxValue: 100
+  currentValue: 10

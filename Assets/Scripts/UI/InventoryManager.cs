@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static InventoryManager singleton;
+
+    private void Awake()
     {
-        
+        InitializeSingleton();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void InitializeSingleton()
     {
-        
+        if (singleton != null && singleton != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            singleton = this;
+        }
     }
 }

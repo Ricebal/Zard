@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private float m_cooldown = 1f;
     [SerializeField] private Stat m_mana;
     [SerializeField] private Shard m_shard;
+    [SerializeField] private Spellbook m_spellbook;
 
     private float m_next = 0;
 
@@ -25,8 +26,7 @@ public class PlayerShooting : MonoBehaviour
     {
         m_next = Time.time + m_cooldown;
         m_mana.Subtract(10);
-        Bullet bullet = Instantiate(m_prefab, m_shotSpawn.position, transform.rotation).GetComponent<Bullet>();
-        bullet.SetShard(m_shard);
-        bullet.Fire();
+        Spell spell = Instantiate(m_prefab, m_shotSpawn.position, transform.rotation).GetComponent<Spell>();
+        spell.Initialize(m_shard, m_spellbook);
     }
 }
