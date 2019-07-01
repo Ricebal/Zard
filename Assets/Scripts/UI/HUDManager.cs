@@ -39,6 +39,6 @@ public class HUDManager : MonoBehaviour
 
     public static void ToggleInventory()
     {
-        singleton.m_inventory.SetActive(!singelton.m_inventory.active);
+        singleton.m_inventory.SetActive(!singleton.m_inventory.active);
     }
 }
