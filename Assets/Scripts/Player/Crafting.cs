@@ -6,14 +6,20 @@ public class Crafting : MonoBehaviour
 {
     private bool m_isAtBench = false;
 
-    public void EnterBenchHandler()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        m_isAtBench = true;
+        if (other.transform.tag == "SCBench")
+        {
+            m_isAtBench = true;
+        }
     }
 
-    public void ExitBenchHandler()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        m_isAtBench = false;
+        if (other.transform.tag == "SCBench")
+        {
+            m_isAtBench = false;
+        }
     }
 
     private void Update()

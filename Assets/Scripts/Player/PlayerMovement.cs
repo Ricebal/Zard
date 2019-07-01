@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator m_animator = null;
     [SerializeField] private CharacterController2D m_controller = null;
     [SerializeField] private float m_speed = 40f;
-    [SerializeField] private Transform m_cameraTransform;
+    [SerializeField] private Transform m_cameraTransform = null;
 
     private float m_horizontalMove = 0f;
     private bool m_jump = false;

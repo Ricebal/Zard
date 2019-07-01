@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
 [CreateAssetMenu(fileName = "New Stat", menuName = "Zard/Stat", order = 0)]
 public class Stat : ScriptableObject
 {

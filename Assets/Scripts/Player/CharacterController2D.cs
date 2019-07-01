@@ -18,8 +18,7 @@ public class CharacterController2D : MonoBehaviour
 
     public UnityEvent OnLandEvent;
     public UnityEvent OnApexEvent;
-    public UnityEvent OnEnterBenchEvent;
-    public UnityEvent OnExitBenchEvent;
+
 
     private void Awake()
     {
@@ -31,11 +30,7 @@ public class CharacterController2D : MonoBehaviour
         if (OnApexEvent == null)
             OnApexEvent = new UnityEvent();
 
-        if (OnEnterBenchEvent == null)
-            OnEnterBenchEvent = new UnityEvent();
 
-        if (OnExitBenchEvent == null)
-            OnExitBenchEvent = new UnityEvent();
     }
 
     public void Move(float move, bool jump)
@@ -71,22 +66,6 @@ public class CharacterController2D : MonoBehaviour
             m_grounded = true;
             m_isJumping = false;
             OnLandEvent?.Invoke();
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.transform.tag == "SCBench")
-        {
-            OnEnterBenchEvent?.Invoke();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.transform.tag == "SCBench")
-        {
-            OnExitBenchEvent?.Invoke();
         }
     }
 

@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Spellbook
-  - Shard
   - SCBench
+  - Pickup
   layers:
   - Default
   - TransparentFX
