@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
 [CreateAssetMenu(fileName = "New Shard", menuName = "Zard/Shard", order = 0)]
 public class Shard : ScriptableObject
 {
